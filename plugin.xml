@@ -1,0 +1,57 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+           id="cordova-plugin-inapp-review"
+      version="0.0.1">
+
+    <name>InAppReviewPlugin</name>
+    <description>Cordova plugin to review app</description>
+    <license>MIT</license>
+    <keywords>cordova</keywords>
+    <repo>https://github.com/chemerisuk/cordova-plugin-inapp-review</repo>
+    <issue>https://github.com/chemerisuk/cordova-plugin-inapp-review/issues</issue>
+
+    <js-module src="www/InAppReview.js" name="InAppReview">
+        <merges target="cordova.plugins.InAppReview" />
+    </js-module>
+
+    <engines>
+        <engine name="cordova" version=">=9.0.0"/>
+        <engine name="cordova-android" version=">=8.0.0"/>
+        <engine name="cordova-ios" version=">=5.0.0"/>
+    </engines>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="InAppReview">
+                <param name="ios-package" value="InAppReviewPlugin" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/InAppReviewPlugin.h" />
+        <source-file src="src/ios/InAppReviewPlugin.m" />
+
+        <framework src="StoreKit.framework" />
+    </platform>
+
+    <platform name="android">
+        <preference name="PLAY_CORE_VERSION" default="1.8.+"/>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="InAppReview">
+                <param name="android-package" value="by.chemerisuk.cordova.InAppReviewPlugin" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+
+        <dependency id="cordova-support-android-plugin" version="~1.0.0"/>
+
+        <framework src="com.google.android.play:core:$PLAY_CORE_VERSION" />
+
+        <source-file src="src/android/InAppReviewPlugin.java"
+            target-dir="src/by/chemerisuk/cordova/" />
+    </platform>
+
+</plugin>

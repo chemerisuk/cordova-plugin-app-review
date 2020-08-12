@@ -1,0 +1,34 @@
+{
+  "name": "cordova-plugin-inapp-review",
+  "version": "0.0.1",
+  "description": "Cordova plugin to review app",
+  "cordova": {
+    "id": "cordova-plugin-inapp-review",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chemerisuk/cordova-plugin-inapp-review.git"
+  },
+  "author": "Maksim Chemerisuk <chemerisuk@gmail.com> (https://github.com/chemerisuk)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chemerisuk/cordova-plugin-inapp-review/issues"
+  },
+  "homepage": "https://github.com/chemerisuk/cordova-plugin-inapp-review#readme",
+  "keywords": [
+    "cordova",
+    "review",
+    "inapp review",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "scripts": {
+    "version": "replace -s 'version=\"(.+)(?=\">)' 'version=\"'$npm_package_version plugin.xml && git add plugin.xml",
+    "postversion": "git push && git push --tags"
+  }
+}
