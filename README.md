@@ -40,4 +40,4 @@ cordova.plugins.InAppReview.askToReview();
 [npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-inapp-review.svg
 [twitter-url]: https://twitter.com/chemerisuk
 [twitter-follow]: https://img.shields.io/twitter/follow/chemerisuk.svg?style=social&label=Follow%20me
-[donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4SVTMPKTAD9QC&source=url
+[donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Z9FRHXAYSQ8BL&source=url
