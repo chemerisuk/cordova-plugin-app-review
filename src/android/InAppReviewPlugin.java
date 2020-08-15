@@ -1,6 +1,8 @@
 package by.chemerisuk.cordova;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 
 import by.chemerisuk.cordova.support.CordovaMethod;
 import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
@@ -15,7 +17,7 @@ import org.apache.cordova.CallbackContext;
 
 public class InAppReviewPlugin extends ReflectiveCordovaPlugin {
     @CordovaMethod
-    private void askToReview(CallbackContext callbackContext) {
+    private void requestReviewDialog(CallbackContext callbackContext) {
         final Activity activity = cordova.getActivity();
         final ReviewManager manager = ReviewManagerFactory.create(activity);
 
@@ -38,6 +40,16 @@ public class InAppReviewPlugin extends ReflectiveCordovaPlugin {
                 }
             }
         });
+    }
+
+    @CordovaMethod
+    private void requestReviewManually(CallbackContext callbackContext) {
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("market://details?id=" + cordova.getActivity().getPackageName()));
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        cordova.getActivity().startActivity(intent);
+
+        callbackContext.success();
     }
 
     private void respondWith(Exception e, CallbackContext callbackContext) {

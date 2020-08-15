@@ -3,7 +3,7 @@
 
 @implementation InAppReviewPlugin
 
-- (void)askToReview:(CDVInvokedUrlCommand *)command {
+- (void)requestReviewDialog:(CDVInvokedUrlCommand *)command {
     CDVPluginResult* pluginResult;
 
     if ([SKStoreReviewController class]) {
@@ -14,6 +14,10 @@
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Rating dialog requires iOS 10.3+"];
     }
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+}
+
+- (void)requestReviewManually:(CDVInvokedUrlCommand*)command {
+
 }
 
 @end

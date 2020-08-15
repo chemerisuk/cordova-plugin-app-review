@@ -2,6 +2,7 @@
 
 @interface InAppReviewPlugin : CDVPlugin
 
-- (void)askToReview:(CDVInvokedUrlCommand*)command;
+- (void)requestReviewDialog:(CDVInvokedUrlCommand*)command;
+- (void)requestReviewManually:(CDVInvokedUrlCommand*)command;
 
 @end
