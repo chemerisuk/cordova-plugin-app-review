@@ -29,10 +29,23 @@ Use variable `PLAY_CORE_VERSION` to override dependency version on Android.
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
 
-### askToReview()
+### requestReviewDialog()
 Launches inapp review dialog.
 ```js
-cordova.plugins.InAppReview.askToReview();
+cordova.plugins.InAppReview.requestReviewDialog();
+```
+
+### requestReview()
+Launches App/Play store page with a review form
+```js
+cordova.plugins.InAppReview.requestReview();
+```
+
+You can use boilerplate below in most of cases:
+```js
+cordova.plugins.InAppReview.requestReviewDialog().catch(() => {
+   return cordova.plugins.InAppReview.requestReview();
+});
 ```
 
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-inapp-review
