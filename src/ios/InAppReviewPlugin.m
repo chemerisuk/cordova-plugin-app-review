@@ -16,7 +16,7 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-- (void)requestReviewManually:(CDVInvokedUrlCommand*)command {
+- (void)requestReview:(CDVInvokedUrlCommand*)command {
     NSString* bundleId = [[NSBundle mainBundle] infoDictionary][@"CFBundleIdentifier"];
     NSString* lookupURL = [NSString stringWithFormat:@"http://itunes.apple.com/lookup?bundleId=%@", bundleId];
     NSData* data = [NSData dataWithContentsOfURL:[NSURL URLWithString:lookupURL]];
