@@ -17,8 +17,10 @@
 
 ## Supported platforms
 
-- iOS
-- Android
+| iOS | Android |
+|-|-|
+| ![iOS](https://developer.apple.com/design/human-interface-guidelines/ios/images/AppRating_2x.png) | ![Android](https://4.bp.blogspot.com/-MSM5VeZfLAU/Xym0OR_huqI/AAAAAAAAPaA/2u9CsMLiQoE4cx3fmQPf0coIH0TuTWiSwCLcBGAsYHQ/s1600/image2.jpg) |
+
 
 ## Installation
 
