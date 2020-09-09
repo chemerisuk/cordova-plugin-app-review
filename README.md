@@ -26,7 +26,7 @@
 
     $ cordova plugin add cordova-plugin-inapp-review
 
-Use variable `PLAY_CORE_VERSION` to override dependency version on Android.
+Use variable `ANDROID_PLAY_CORE_VERSION` to override dependency version on Android.
 
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
