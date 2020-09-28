@@ -1,4 +1,4 @@
-# cordova-plugin-inapp-review
+# cordova-plugin-app-review
 
 [![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Twitter][twitter-follow]][twitter-url]
 
@@ -24,7 +24,7 @@
 
 ## Installation
 
-    $ cordova plugin add cordova-plugin-inapp-review
+    $ cordova plugin add cordova-plugin-app-review
 
 Use variable `ANDROID_PLAY_CORE_VERSION` to override dependency version on Android.
 
@@ -50,9 +50,9 @@ cordova.plugins.AppReview.requestReviewDialog().catch(() => {
 });
 ```
 
-[npm-url]: https://www.npmjs.com/package/cordova-plugin-inapp-review
-[npm-version]: https://img.shields.io/npm/v/cordova-plugin-inapp-review.svg
-[npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-inapp-review.svg
+[npm-url]: https://www.npmjs.com/package/cordova-plugin-app-review
+[npm-version]: https://img.shields.io/npm/v/cordova-plugin-app-review.svg
+[npm-downloads]: https://img.shields.io/npm/dm/cordova-plugin-app-review.svg
 [twitter-url]: https://twitter.com/chemerisuk
 [twitter-follow]: https://img.shields.io/twitter/follow/chemerisuk.svg?style=social&label=Follow%20me
 [donate-url]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=Z9FRHXAYSQ8BL&source=url
