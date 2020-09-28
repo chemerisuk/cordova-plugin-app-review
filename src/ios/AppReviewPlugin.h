@@ -2,7 +2,7 @@
 
 @interface AppReviewPlugin : CDVPlugin
 
-- (void)requestReviewDialog:(CDVInvokedUrlCommand*)command;
 - (void)requestReview:(CDVInvokedUrlCommand*)command;
+- (void)openStoreScreen:(CDVInvokedUrlCommand*)command;
 
 @end

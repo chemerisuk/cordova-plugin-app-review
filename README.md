@@ -31,22 +31,22 @@ Use variable `ANDROID_PLAY_CORE_VERSION` to override dependency version on Andro
 ## Methods
 Every method returns a promise that fulfills when a call was successful.
 
-### requestReviewDialog()
-Launches inapp review dialog.
-```js
-cordova.plugins.AppReview.requestReviewDialog();
-```
-
 ### requestReview()
-Launches App/Play store page with a review form
+Launches inapp review dialog.
 ```js
 cordova.plugins.AppReview.requestReview();
 ```
 
+### openStoreScreen(packageName)
+Launches App/Play store page with a review form
+```js
+cordova.plugins.AppReview.openStoreScreen();
+```
+
 You can use boilerplate below in most of cases:
 ```js
-cordova.plugins.AppReview.requestReviewDialog().catch(() => {
-   return cordova.plugins.AppReview.requestReview();
+cordova.plugins.AppReview.requestReview().catch(() => {
+   return cordova.plugins.AppReview.openStoreScreen();
 });
 ```
 

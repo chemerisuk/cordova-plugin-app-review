@@ -2,14 +2,14 @@ var exec = require("cordova/exec");
 var PLUGIN_NAME = "AppReview";
 
 module.exports = {
-    requestReviewDialog: function() {
+    requestReview: function() {
         return new Promise(function(resolve, reject) {
-            exec(resolve, reject, PLUGIN_NAME, "requestReviewDialog", []);
+            exec(resolve, reject, PLUGIN_NAME, "requestReview", []);
         });
     },
-    requestReview: function(packageName) {
+    openStoreScreen: function(packageName) {
         return new Promise(function(resolve, reject) {
-            exec(resolve, reject, PLUGIN_NAME, "requestReview", [packageName || null]);
+            exec(resolve, reject, PLUGIN_NAME, "openStoreScreen", [packageName || null]);
         });
     }
 };

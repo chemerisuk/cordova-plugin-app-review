@@ -3,7 +3,7 @@
 
 @implementation AppReviewPlugin
 
-- (void)requestReviewDialog:(CDVInvokedUrlCommand *)command {
+- (void)requestReview:(CDVInvokedUrlCommand *)command {
     CDVPluginResult* pluginResult;
     if ([SKStoreReviewController class]) {
         [SKStoreReviewController requestReview];
@@ -15,7 +15,7 @@
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
-- (void)requestReview:(CDVInvokedUrlCommand*)command {
+- (void)openStoreScreen:(CDVInvokedUrlCommand*)command {
     NSString* packageName = [command.arguments objectAtIndex:0];
     if (!packageName) {
         packageName = [[NSBundle mainBundle] infoDictionary][@"CFBundleIdentifier"];

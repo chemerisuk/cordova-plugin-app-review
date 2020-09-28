@@ -17,7 +17,7 @@ import org.apache.cordova.CallbackContext;
 
 public class AppReviewPlugin extends ReflectiveCordovaPlugin {
     @CordovaMethod
-    private void requestReviewDialog(CallbackContext callbackContext) {
+    private void requestReview(CallbackContext callbackContext) {
         final Activity activity = cordova.getActivity();
         final ReviewManager manager = ReviewManagerFactory.create(activity);
 
@@ -43,7 +43,7 @@ public class AppReviewPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod
-    private void requestReview(String packageName, CallbackContext callbackContext) {
+    private void openStoreScreen(String packageName, CallbackContext callbackContext) {
         if (packageName == null) {
             packageName = cordova.getActivity().getPackageName();
         }
