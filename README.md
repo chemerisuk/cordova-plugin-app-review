@@ -49,6 +49,7 @@ IOS notes:
 
 Android notes:
 
+* **After the account on the device has downloaded the app at least once from the internal test track and is part of the testers list, you can deploy new versions of the app via cordova cli and call `requestReview` in debug mode**.
 * In-app reviews require your app to be published in Play Store.
 * [Google Play enforces a quota on how often a user can be shown the review dialog](https://developer.android.com/guide/playcore/in-app-review#quotas).
 
