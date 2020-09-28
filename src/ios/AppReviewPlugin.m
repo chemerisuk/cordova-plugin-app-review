@@ -17,15 +17,15 @@
 
 - (void)openStoreScreen:(CDVInvokedUrlCommand*)command {
     NSString* packageName = [command.arguments objectAtIndex:0];
-    if (!packageName) {
+    if ([packageName isKindOfClass:[NSNull class]]) {
         packageName = [[NSBundle mainBundle] infoDictionary][@"CFBundleIdentifier"];
     }
     NSString* trackId = [self fetchTrackId:packageName];
 
     CDVPluginResult* pluginResult;
     if (trackId) {
-        NSString* reviewURL = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@?action=write-review", trackId];
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:reviewURL] options:@{} completionHandler:nil];
+        NSString* storeURL = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@", trackId];
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeURL] options:@{} completionHandler:nil];
 
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     } else {
