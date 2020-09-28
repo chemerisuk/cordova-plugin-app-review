@@ -1,5 +1,5 @@
 var exec = require("cordova/exec");
-var PLUGIN_NAME = "InAppReview";
+var PLUGIN_NAME = "AppReview";
 
 module.exports = {
     requestReviewDialog: function() {

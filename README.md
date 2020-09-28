@@ -34,19 +34,19 @@ Every method returns a promise that fulfills when a call was successful.
 ### requestReviewDialog()
 Launches inapp review dialog.
 ```js
-cordova.plugins.InAppReview.requestReviewDialog();
+cordova.plugins.AppReview.requestReviewDialog();
 ```
 
 ### requestReview()
 Launches App/Play store page with a review form
 ```js
-cordova.plugins.InAppReview.requestReview();
+cordova.plugins.AppReview.requestReview();
 ```
 
 You can use boilerplate below in most of cases:
 ```js
-cordova.plugins.InAppReview.requestReviewDialog().catch(() => {
-   return cordova.plugins.InAppReview.requestReview();
+cordova.plugins.AppReview.requestReviewDialog().catch(() => {
+   return cordova.plugins.AppReview.requestReview();
 });
 ```
 

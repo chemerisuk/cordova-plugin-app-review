@@ -1,6 +1,6 @@
 #import <Cordova/CDV.h>
 
-@interface InAppReviewPlugin : CDVPlugin
+@interface AppReviewPlugin : CDVPlugin
 
 - (void)requestReviewDialog:(CDVInvokedUrlCommand*)command;
 - (void)requestReview:(CDVInvokedUrlCommand*)command;

@@ -1,7 +1,7 @@
-#import "InAppReviewPlugin.h"
+#import "AppReviewPlugin.h"
 #import "StoreKit/StoreKit.h"
 
-@implementation InAppReviewPlugin
+@implementation AppReviewPlugin
 
 - (void)requestReviewDialog:(CDVInvokedUrlCommand *)command {
     CDVPluginResult* pluginResult;

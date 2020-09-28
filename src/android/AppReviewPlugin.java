@@ -15,7 +15,7 @@ import com.google.android.play.core.tasks.Task;
 
 import org.apache.cordova.CallbackContext;
 
-public class InAppReviewPlugin extends ReflectiveCordovaPlugin {
+public class AppReviewPlugin extends ReflectiveCordovaPlugin {
     @CordovaMethod
     private void requestReviewDialog(CallbackContext callbackContext) {
         final Activity activity = cordova.getActivity();
