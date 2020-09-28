@@ -29,7 +29,12 @@
 Use variable `ANDROID_PLAY_CORE_VERSION` to override dependency version on Android.
 
 ## Methods
-Every method returns a promise that fulfills when a call was successful.
+Most of time you can just use a boilerplate below to trigger the inapp review dialog and fallback to app/play store screen when the dialog wasn't displayed:
+```js
+cordova.plugins.AppReview.requestReview().catch(function() {
+   return cordova.plugins.AppReview.openStoreScreen();
+});
+```
 
 ### requestReview()
 Launches inapp review dialog.
@@ -37,18 +42,23 @@ Launches inapp review dialog.
 cordova.plugins.AppReview.requestReview();
 ```
 
-### openStoreScreen(packageName)
+IOS notes:
+
+* Supported iOS 10.3+ only.
+* [iOS limits the frequency of displaying The Rating dialog](https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/ratings-and-reviews/#system-rating-and-review-prompts).
+
+Android notes:
+
+* In-app reviews require your app to be published in Play Store.
+* [Google Play enforces a quota on how often a user can be shown the review dialog](https://developer.android.com/guide/playcore/in-app-review#quotas).
+
+### openStoreScreen(_packageName_)
 Launches App/Play store page with a review form
 ```js
 cordova.plugins.AppReview.openStoreScreen();
 ```
 
-You can use boilerplate below in most of cases:
-```js
-cordova.plugins.AppReview.requestReview().catch(() => {
-   return cordova.plugins.AppReview.openStoreScreen();
-});
-```
+By default current app screen is displayed. Optionally you can pass a package name string to show another app details.
 
 [npm-url]: https://www.npmjs.com/package/cordova-plugin-app-review
 [npm-version]: https://img.shields.io/npm/v/cordova-plugin-app-review.svg
