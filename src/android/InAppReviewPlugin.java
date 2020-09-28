@@ -43,9 +43,12 @@ public class InAppReviewPlugin extends ReflectiveCordovaPlugin {
     }
 
     @CordovaMethod
-    private void requestReview(CallbackContext callbackContext) {
-        Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("market://details?id=" + cordova.getActivity().getPackageName()));
+    private void requestReview(String packageName, CallbackContext callbackContext) {
+        if (packageName == null) {
+            packageName = cordova.getActivity().getPackageName();
+        }
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY | Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
         cordova.getActivity().startActivity(intent);
 

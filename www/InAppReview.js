@@ -7,9 +7,9 @@ module.exports = {
             exec(resolve, reject, PLUGIN_NAME, "requestReviewDialog", []);
         });
     },
-    requestReview: function() {
+    requestReview: function(packageName) {
         return new Promise(function(resolve, reject) {
-            exec(resolve, reject, PLUGIN_NAME, "requestReview", []);
+            exec(resolve, reject, PLUGIN_NAME, "requestReview", [packageName || null]);
         });
     }
 };
