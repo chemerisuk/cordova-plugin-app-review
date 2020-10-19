@@ -19,9 +19,12 @@
     "url": "https://github.com/chemerisuk/cordova-plugin-app-review/issues"
   },
   "homepage": "https://github.com/chemerisuk/cordova-plugin-app-review#readme",
+  "funding": "https://github.com/chemerisuk/cordova-plugin-app-review?sponsor=1",
   "keywords": [
     "cordova",
     "review",
+    "review dialog",
+    "app review",
     "inapp review",
     "ecosystem:cordova",
     "cordova-android",

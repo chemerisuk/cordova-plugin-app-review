@@ -2,7 +2,7 @@
 
 [![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![PayPal donate](https://img.shields.io/badge/paypal-donate-ff69b4?logo=paypal)][donate-url] [![Twitter][twitter-follow]][twitter-url]
 
-<table border="0">
+<table>
     <tr>
         <td><img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/AppRating_2x.png"/></td>
         <td><img src="https://4.bp.blogspot.com/-MSM5VeZfLAU/Xym0OR_huqI/AAAAAAAAPaA/2u9CsMLiQoE4cx3fmQPf0coIH0TuTWiSwCLcBGAsYHQ/s1600/image2.jpg"/></td>
@@ -23,7 +23,6 @@
 
 * iOS
 * Android
-
 
 ## Installation
 
