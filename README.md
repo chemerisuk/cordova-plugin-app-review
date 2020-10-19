@@ -1,9 +1,13 @@
 # cordova-plugin-app-review
 
-[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![Twitter][twitter-follow]][twitter-url]
+[![NPM version][npm-version]][npm-url] [![NPM downloads][npm-downloads]][npm-url] [![PayPal donate](https://img.shields.io/badge/paypal-donate-ff69b4?logo=paypal)][donate-url] [![Twitter][twitter-follow]][twitter-url]
 
-| [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)][donate-url] | Your help is appreciated. Create a PR, submit a bug or just grab me :beer: |
-|-|-|
+<table border="0">
+    <tr>
+        <td><img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/AppRating_2x.png"/></td>
+        <td><img src="https://4.bp.blogspot.com/-MSM5VeZfLAU/Xym0OR_huqI/AAAAAAAAPaA/2u9CsMLiQoE4cx3fmQPf0coIH0TuTWiSwCLcBGAsYHQ/s1600/image2.jpg"/></td>
+    </tr>
+</table>
 
 ## Index
 
@@ -17,9 +21,8 @@
 
 ## Supported platforms
 
-| iOS | Android |
-|-|-|
-| ![iOS](https://developer.apple.com/design/human-interface-guidelines/ios/images/AppRating_2x.png) | ![Android](https://4.bp.blogspot.com/-MSM5VeZfLAU/Xym0OR_huqI/AAAAAAAAPaA/2u9CsMLiQoE4cx3fmQPf0coIH0TuTWiSwCLcBGAsYHQ/s1600/image2.jpg) |
+* iOS
+* Android
 
 
 ## Installation
