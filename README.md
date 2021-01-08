@@ -28,7 +28,9 @@
 
     $ cordova plugin add cordova-plugin-app-review
 
-Use variable `ANDROID_PLAY_CORE_VERSION` to override dependency version on Android.
+Use variable `ANDROID_PLAY_CORE_VERSION` to override dependency version on Android:
+
+    $ cordova plugin add cordova-plugin-app-review --variable ANDROID_PLAY_CORE_VERSION='1.8.+'
 
 ## Methods
 Most of time you can just use a boilerplate below to trigger the inapp review dialog and fallback to app/play store screen when the dialog wasn't displayed:
