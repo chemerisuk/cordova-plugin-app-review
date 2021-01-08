@@ -17,7 +17,7 @@ import org.apache.cordova.CallbackContext;
 
 public class AppReviewPlugin extends ReflectiveCordovaPlugin {
     @CordovaMethod
-    private void requestReview(CallbackContext callbackContext) {
+    private void requestReview(final CallbackContext callbackContext) {
         final Activity activity = cordova.getActivity();
         final ReviewManager manager = ReviewManagerFactory.create(activity);
 
