@@ -34,6 +34,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </platform>
 
     <platform name="android">
+        <preference name="ANDROID_PLAY_REVIEW_VERSION" default="2.0.+"/>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="AppReview">
@@ -47,7 +48,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 
         <dependency id="cordova-support-android-plugin" version="~1.0.0"/>
 
-        <framework src="com.google.android.play:review:2.0.0" />
+        <framework src="com.google.android.play:review:$ANDROID_PLAY_REVIEW_VERSION" />
 
         <source-file src="src/android/AppReviewPlugin.java"
             target-dir="src/by/chemerisuk/cordova/" />

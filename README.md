@@ -35,9 +35,9 @@
 
     $ cordova plugin add cordova-plugin-app-review
 
-Use variable `ANDROID_PLAY_CORE_VERSION` to override dependency version on Android:
+Use variable `ANDROID_PLAY_REVIEW_VERSION` to override dependency version on Android:
 
-    $ cordova plugin add cordova-plugin-app-review --variable ANDROID_PLAY_CORE_VERSION='1.8.+'
+    $ cordova plugin add cordova-plugin-app-review --variable ANDROID_PLAY_REVIEW_VERSION='2.0.+'
 
 <!-- TypedocGenerated -->
 
@@ -71,7 +71,7 @@ Callback when operation is completed
 
 #### Defined in
 
-[index.d.ts:41](https://github.com/chemerisuk/cordova-plugin-app-review/blob/8e75e2d/types/index.d.ts#L41)
+[index.d.ts:41](https://github.com/chemerisuk/cordova-plugin-app-review/blob/f9248a8/types/index.d.ts#L41)
 
 ___
 
@@ -115,15 +115,4 @@ Callback when operation is completed
 
 #### Defined in
 
-[index.d.ts:28](https://github.com/chemerisuk/cordova-plugin-app-review/blob/8e75e2d/types/index.d.ts#L28)
-<!-- TypedocGenerated -->
-
-## Properties
-
-### AppReview
-
-• **AppReview**: [`AppReviewPlugin`](AppReviewPlugin.md)
-
-#### Defined in
-
-[index.d.ts:45](https://github.com/chemerisuk/cordova-plugin-app-review/blob/8e75e2d/types/index.d.ts#L45)
+[index.d.ts:28](https://github.com/chemerisuk/cordova-plugin-app-review/blob/f9248a8/types/index.d.ts#L28)

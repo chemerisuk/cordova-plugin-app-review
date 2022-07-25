@@ -37,7 +37,7 @@
     "postversion": "git push && git push --tags",
     "docs": "typedoc --hideBreadcrumbs --hideInPageTOC --entryPointStrategy packages .",
     "preapidocs": "perl -i -0pe 's/<!-- TypedocGenerated -->.*//gms' README.md",
-    "apidocs": "cat ./docs/interfaces/*.md >> README.md",
+    "apidocs": "cat ./docs/interfaces/AppReviewPlugin.md >> README.md",
     "postapidocs": "perl -i -pe 's/# Interface.*/<!-- TypedocGenerated -->/' README.md"
   },
   "devDependencies": {
