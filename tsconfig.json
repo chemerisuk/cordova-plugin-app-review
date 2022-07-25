@@ -1,0 +1,10 @@
+{
+  "typedocOptions": {
+    "out": "docs",
+    "entryPointStrategy": "packages",
+    "hideBreadcrumbs": true,
+    "hideInPageTOC": true,
+    "hidePageTitle": true,
+    "hideMembersSymbol": true
+  }
+}

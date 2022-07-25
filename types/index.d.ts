@@ -41,6 +41,7 @@ export interface AppReviewPlugin {
     openStoreScreen(packageName?: string): Promise<void>;
 }
 
+/** @ignore */
 interface CordovaPlugins {
     AppReview: AppReviewPlugin;
 }
