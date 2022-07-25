@@ -71,7 +71,7 @@ Callback when operation is completed
 
 #### Defined in
 
-[index.d.ts:41](https://github.com/chemerisuk/cordova-plugin-app-review/blob/f9248a8/types/index.d.ts#L41)
+[index.d.ts:41](https://github.com/chemerisuk/cordova-plugin-app-review/blob/e2df19b/types/index.d.ts#L41)
 
 ___
 
@@ -115,4 +115,4 @@ Callback when operation is completed
 
 #### Defined in
 
-[index.d.ts:28](https://github.com/chemerisuk/cordova-plugin-app-review/blob/f9248a8/types/index.d.ts#L28)
+[index.d.ts:28](https://github.com/chemerisuk/cordova-plugin-app-review/blob/e2df19b/types/index.d.ts#L28)
