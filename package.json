@@ -32,7 +32,16 @@
     "cordova-ios"
   ],
   "scripts": {
-    "version": "perl -p -i -e 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add plugin.xml",
-    "postversion": "git push && git push --tags"
+    "preversion": "npm run docs && npm run apidocs && rm -rf ./docs",
+    "version": "perl -i -pe 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add plugin.xml README.md",
+    "postversion": "git push && git push --tags",
+    "docs": "typedoc --hideBreadcrumbs --hideInPageTOC --entryPointStrategy packages .",
+    "preapidocs": "perl -i -0pe 's/<!-- TypedocGenerated -->.*//gms' README.md",
+    "apidocs": "cat ./docs/interfaces/*.md >> README.md",
+    "postapidocs": "perl -i -pe 's/# Interface.*/<!-- TypedocGenerated -->/' README.md"
+  },
+  "devDependencies": {
+    "typedoc": "^0.23.9",
+    "typedoc-plugin-markdown": "^3.13.4"
   }
 }
