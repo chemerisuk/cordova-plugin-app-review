@@ -29,7 +29,13 @@
 ## Supported platforms
 
 * iOS
+    - Supported iOS 10.3+ only
+    - [iOS limits the frequency of displaying The Rating dialog](https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/)
+
 * Android
+    - After the account on the device has downloaded the app at least once from the internal test track and is part of the testers list, you can deploy new versions of the app via cordova cli and call `requestReview` in debug mode
+    - In-app reviews require your app to be published in Play Store
+    - [Google Play enforces a quota on how often a user can be shown the review dialog](https://developer.android.com/guide/playcore/in-app-review#quotas)
 
 ## Installation
 
@@ -43,7 +49,7 @@ Use variable `ANDROID_PLAY_REVIEW_VERSION` to override dependency version on And
 
 ## Methods
 
-### **openStoreScreen**(`packageName?`): `Promise`<`void`\>
+### ▸ **openStoreScreen**(`packageName?`): `Promise`<`void`\>
 
 Launches App/Play store page with a review form. By default current app screen
 is displayed but you can pass a package name string to show another app details.
@@ -67,25 +73,9 @@ cordova.plugins.AppReview.openStoreScreen("com.app.example");
 
 Callback when operation is completed
 
-### **requestReview**(): `Promise`<`void`\>
+### ▸ **requestReview**(): `Promise`<`void`\>
 
 Launches in-app review dialog.
-
-IOS notes:
-- Supported iOS 10.3+ only
-- iOS limits the frequency of displaying The Rating dialog
-
-Android notes:
-- After the account on the device has downloaded the app at least once from the
-internal test track and is part of the testers list, you can deploy new
-versions of the app via cordova cli and call `requestReview` in debug mode
-- In-app reviews require your app to be published in Play Store
-- Google Play enforces a quota on how often a user can be shown the review dialog
-
-**`See`**
-
- - [https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/](https://developer.apple.com/design/human-interface-guidelines/ios/system-capabilities/)
- - [https://developer.android.com/guide/playcore/in-app-review#quotas](https://developer.android.com/guide/playcore/in-app-review#quotas)
 
 **`Example`**
 
