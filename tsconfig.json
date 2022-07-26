@@ -1,7 +1,7 @@
 {
   "typedocOptions": {
     "out": "docs",
-    "entryPointStrategy": "packages",
+    "entryPointStrategy": "expand",
     "hideBreadcrumbs": true,
     "hideInPageTOC": true,
     "hidePageTitle": true

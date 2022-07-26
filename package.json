@@ -35,9 +35,9 @@
     "preversion": "npm run docs && rm -rf ./docs",
     "version": "perl -i -pe 's/(version=)\"\\d+\\.\\d+\\.\\d+\"/$1\"'$npm_package_version'\"$2/' plugin.xml && git add plugin.xml README.md",
     "postversion": "git push && git push --tags",
-    "predocs": "perl -i -0pe 's/(<!-- TypedocGenerated -->).*/$1\n\n/gms' README.md",
-    "docs": "typedoc .",
-    "postdocs": "cat ./docs/interfaces/*.md >> README.md"
+    "predocs": "tsc www/* --declaration --allowJs --emitDeclarationOnly --outDir types",
+    "docs": "typedoc ./types",
+    "postdocs": "cat ./docs/modules/AppReview.md >> README.md && perl -i -0pe 's/(## Methods).*(## Functions)/$1/gms' README.md"
   },
   "devDependencies": {
     "@colony/typedoc-plugin-markdown": "3.16.0",
