@@ -1,8 +1,8 @@
 var exec = require("cordova/exec");
+var PLUGIN_NAME = "AppReview";
 
-function AppReview() {}
-
-AppReview.prototype = {
+module.exports = {
+    requestReview:
     /**
      * Launches in-app review dialog.
      *
@@ -15,11 +15,12 @@ AppReview.prototype = {
      *     return cordova.plugins.AppReview.openStoreScreen();
      * });
      */
-    requestReview() {
+    function() {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, AppReview.name, "requestReview", []);
         });
     },
+    openStoreScreen:
     /**
      * Launches App/Play store page with a review form. By default current app screen
      * is displayed but you can pass a package name string to show another app details.
@@ -31,12 +32,9 @@ AppReview.prototype = {
      * cordova.plugins.AppReview.openStoreScreen();
      * cordova.plugins.AppReview.openStoreScreen("com.app.example");
      */
-    openStoreScreen(packageName) {
+    function(packageName) {
         return new Promise(function(resolve, reject) {
             exec(resolve, reject, AppReview.name, "openStoreScreen", [packageName || null]);
         });
-    }
+    },
 }
-
-module.exports = new AppReview();
-module.exports.AppReview = AppReview;
