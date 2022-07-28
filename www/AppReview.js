@@ -1,3 +1,4 @@
+// @ts-ignore
 var exec = require("cordova/exec");
 var PLUGIN_NAME = "AppReview";
 
@@ -17,7 +18,7 @@ module.exports = {
      */
     function() {
         return new Promise(function(resolve, reject) {
-            exec(resolve, reject, AppReview.name, "requestReview", []);
+            exec(resolve, reject, PLUGIN_NAME, "requestReview", []);
         });
     },
     openStoreScreen:
@@ -34,7 +35,7 @@ module.exports = {
      */
     function(packageName) {
         return new Promise(function(resolve, reject) {
-            exec(resolve, reject, AppReview.name, "openStoreScreen", [packageName || null]);
+            exec(resolve, reject, PLUGIN_NAME, "openStoreScreen", [packageName || null]);
         });
     },
 }
