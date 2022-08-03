@@ -22,7 +22,7 @@
 
 - [Supported platforms](#supported-platforms)
 - [Installation](#installation)
-- [Methods](#methods)
+- [Functions](#functions)
 
 <!-- /MarkdownTOC -->
 
@@ -43,7 +43,8 @@
 
 Use variable `ANDROID_PLAY_REVIEW_VERSION` to override dependency version on Android:
 
-    $ cordova plugin add cordova-plugin-app-review --variable ANDROID_PLAY_REVIEW_VERSION='2.0.+'
+    $ cordova plugin add cordova-plugin-app-review \
+        --variable ANDROID_PLAY_REVIEW_VERSION='2.0.+'
 
 <!-- TypedocGenerated -->
 
