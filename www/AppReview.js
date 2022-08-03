@@ -1,6 +1,6 @@
+var PLUGIN_NAME = "AppReview";
 // @ts-ignore
 var exec = require("cordova/exec");
-var PLUGIN_NAME = "AppReview";
 
 module.exports = {
     requestReview:

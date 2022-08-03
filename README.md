@@ -47,9 +47,11 @@ Use variable `ANDROID_PLAY_REVIEW_VERSION` to override dependency version on And
 
 <!-- TypedocGenerated -->
 
-## Methods
+## Functions
 
-### ▸ **openStoreScreen**(`packageName?`): `Promise`<`void`\>
+### openStoreScreen
+
+**openStoreScreen**(`packageName?`): `Promise`<`void`\>
 
 Launches App/Play store page with a review form. By default current app screen
 is displayed but you can pass a package name string to show another app details.
@@ -73,7 +75,11 @@ cordova.plugins.AppReview.openStoreScreen("com.app.example");
 
 Callback when operation is completed
 
-### ▸ **requestReview**(): `Promise`<`void`\>
+___
+
+### requestReview
+
+**requestReview**(): `Promise`<`void`\>
 
 Launches in-app review dialog.
 
