@@ -1,6 +1,7 @@
 package by.chemerisuk.cordova;
 
 import static com.google.android.gms.tasks.Tasks.await;
+import static by.chemerisuk.cordova.support.ExecutionThread.WORKER;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -18,7 +19,7 @@ import by.chemerisuk.cordova.support.CordovaMethod;
 import by.chemerisuk.cordova.support.ReflectiveCordovaPlugin;
 
 public class AppReviewPlugin extends ReflectiveCordovaPlugin {
-    @CordovaMethod
+    @CordovaMethod(WORKER)
     private void requestReview(CallbackContext callbackContext) throws Exception {
         Activity activity = cordova.getActivity();
         ReviewManager manager = ReviewManagerFactory.create(activity);
