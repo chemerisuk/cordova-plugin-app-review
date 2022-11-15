@@ -35,6 +35,7 @@ exports.openStoreScreen =
  */
 function(packageName) {
     return new Promise(function(resolve, reject) {
-        exec(resolve, reject, PLUGIN_NAME, "openStoreScreen", [packageName || null]);
+        var writeReview = true;
+        exec(resolve, reject, PLUGIN_NAME, "openStoreScreen", [packageName || null, writeReview]);
     });
 };
