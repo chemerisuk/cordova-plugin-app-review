@@ -20,11 +20,17 @@
     if ([packageName isKindOfClass:[NSNull class]]) {
         packageName = [[NSBundle mainBundle] infoDictionary][@"CFBundleIdentifier"];
     }
+    BOOL writeReview = [[command.arguments objectAtIndex:1] boolValue];
     NSString* trackId = [self fetchTrackId:packageName];
 
     CDVPluginResult* pluginResult;
     if (trackId) {
         NSString* storeURL = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@", trackId];
+
+        if (writeReview) {
+            storeURL = [NSString stringWithFormat:@"%@?action=write-review", storeURL];
+        }
+        
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeURL] options:@{} completionHandler:nil];
 
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
