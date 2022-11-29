@@ -26,13 +26,12 @@
     CDVPluginResult* pluginResult;
     if (trackId) {
         NSString* storeURL = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@", trackId];
-        NSString* storeReviewURL = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@?action=write-review", trackId];
 
         if (writeReview) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeReviewURL] options:@{} completionHandler:nil];
-        } else {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeURL] options:@{} completionHandler:nil];
+            storeURL = [NSString stringWithFormat:@"%@?action=write-review", storeURL];
         }
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeURL] options:@{} completionHandler:nil];
 
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     } else {
