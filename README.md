@@ -52,7 +52,7 @@ Use variable `ANDROID_PLAY_REVIEW_VERSION` to override dependency version on And
 
 ### openStoreScreen
 
-**openStoreScreen**(`packageName?`): `Promise`<`void`\>
+**openStoreScreen**(`packageName?`, `writeReview?`): `Promise`<`void`\>
 
 Launches App/Play store page with a review form. By default current app screen
 is displayed but you can pass a package name string to show another app details.
@@ -62,6 +62,7 @@ is displayed but you can pass a package name string to show another app details.
 ```ts
 cordova.plugins.AppReview.openStoreScreen();
 cordova.plugins.AppReview.openStoreScreen("com.app.example");
+cordova.plugins.AppReview.openStoreScreen(null, true);
 ```
 
 #### Parameters
@@ -69,6 +70,7 @@ cordova.plugins.AppReview.openStoreScreen("com.app.example");
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `packageName?` | `string` | Package name to show instead of the current app. |
+| `writeReview?` | `boolean` | Open review form if true. Only implemented on iOS. |
 
 #### Returns
 

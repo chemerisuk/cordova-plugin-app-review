@@ -16,10 +16,12 @@ export function requestReview(): Promise<void>;
  * is displayed but you can pass a package name string to show another app details.
  *
  * @param {string} [packageName] Package name to show instead of the current app.
+ * @param {boolean} [writeReview] Open review form if true. Only implemented on iOS.
  * @returns {Promise<void>} Callback when operation is completed
  *
  * @example
  * cordova.plugins.AppReview.openStoreScreen();
  * cordova.plugins.AppReview.openStoreScreen("com.app.example");
+ * cordova.plugins.AppReview.openStoreScreen(null, true);
  */
-export function openStoreScreen(packageName?: string): Promise<void>;
+export function openStoreScreen(packageName?: string, writeReview?: boolean): Promise<void>;
