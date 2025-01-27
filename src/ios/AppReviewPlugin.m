@@ -6,7 +6,18 @@
 - (void)requestReview:(CDVInvokedUrlCommand *)command {
     CDVPluginResult* pluginResult;
     if ([SKStoreReviewController class]) {
-        [SKStoreReviewController requestReview];
+        BOOL shownInScene = NO;
+        if (@available(iOS 14.0, *)) {
+            UIWindowScene *scene = self.viewController.view.window.windowScene;
+            if (scene) {
+                [SKStoreReviewController requestReviewInScene:scene];
+                shownInScene = YES;
+            }
+        }
+
+        if (!shownInScene) {
+            [SKStoreReviewController requestReview];
+        }
 
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     } else {
