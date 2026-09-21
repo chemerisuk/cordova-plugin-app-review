@@ -6,7 +6,18 @@
 - (void)requestReview:(CDVInvokedUrlCommand *)command {
     CDVPluginResult* pluginResult;
     if ([SKStoreReviewController class]) {
-        [SKStoreReviewController requestReview];
+        BOOL shownInScene = NO;
+        if (@available(iOS 14.0, *)) {
+            UIWindowScene *scene = self.viewController.view.window.windowScene;
+            if (scene) {
+                [SKStoreReviewController requestReviewInScene:scene];
+                shownInScene = YES;
+            }
+        }
+
+        if (!shownInScene) {
+            [SKStoreReviewController requestReview];
+        }
 
         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     } else {
@@ -21,23 +32,33 @@
         packageName = [[NSBundle mainBundle] infoDictionary][@"CFBundleIdentifier"];
     }
     BOOL writeReview = [[command.arguments objectAtIndex:1] boolValue];
-    NSString* trackId = [self fetchTrackId:packageName];
 
-    CDVPluginResult* pluginResult;
-    if (trackId) {
-        NSString* storeURL = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@", trackId];
+    [self.commandDelegate runInBackground:^{
+        NSString* trackId = [self fetchTrackId:packageName];
 
-        if (writeReview) {
-            storeURL = [NSString stringWithFormat:@"%@?action=write-review", storeURL];
+        if (trackId) {
+            NSString* storeURL = [NSString stringWithFormat:@"https://apps.apple.com/app/id%@", trackId];
+
+            if (writeReview) {
+                storeURL = [NSString stringWithFormat:@"%@?action=write-review", storeURL];
+            }
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeURL] options:@{} completionHandler:^(BOOL success) {
+                    CDVPluginResult *pluginResult;
+                    if (success) {
+                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+                    } else {
+                        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"openURL reported failure"];
+                    }
+                    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+                }];
+            });
+        } else {
+            CDVPluginResult *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Can't get trackId"];
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
         }
-        
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:storeURL] options:@{} completionHandler:nil];
-
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-    } else {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Can't get trackId"];
-    }
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }];
 }
 
 - (NSString*)fetchTrackId:(NSString*)packageName {
